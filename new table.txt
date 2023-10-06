@@ -1,0 +1,10 @@
+CREATE TABLE Usuarios(
+id_usuario int(11) NOT NULL AUTO_INCREMENT ,
+Nombre varchar(20) not null,
+Apellido varchar(20) null,
+Correo varchar(50) not null,
+Telefono int(12) not null,
+PRIMARY KEY (`id_usuario`))
+ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
