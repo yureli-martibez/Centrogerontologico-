@@ -123,11 +123,12 @@
         font-weight: bold;
         color: #000000;
         position: relative;
+        font-size: 2rem;
 
     }
 
     .custom_heading-container h3 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 }
 
@@ -210,10 +211,22 @@
     font-weight: bold;
     color: #000000;
     position: relative;
-    font-size: 1.5rem; /* Cambia el tamaño de fuente según tus necesidades */
+    font-size: 2rem; /* Cambia el tamaño de fuente según tus necesidades */
   }
   
   /* Otros estilos de fuente para otros elementos */
   
   /* End footer section */
-  
+/* Estilos responsivos perfil */
+@media screen and (max-width: 768px) {
+    .profile-card {
+        max-width: 100%;
+        padding: 10px;
+    }
+    .profile-card h1 {
+        font-size: 20px;
+    }
+    .profile-card p {
+        font-size: 14px;
+    }
+}

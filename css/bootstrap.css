@@ -250,6 +250,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  border-radius: 8px;
 }
 
 button,
@@ -621,6 +622,8 @@ pre code {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  border-radius: 8px;
+ 
 }
 
 .col {
@@ -708,6 +711,10 @@ pre code {
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+.gray-placeholder::placeholder {
+  color: gray;
 }
 
 .order-first {
