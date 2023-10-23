@@ -25,8 +25,9 @@
       var telefono = document.getElementById("phone").value;
       var tutor = document.getElementsByName("tutor")[0].value;
       var fechaNacimiento = document.getElementsByName("fecha_nacimiento")[0].value;
-      var telefonoTutor = document.getElementById("phone_tutor").value; // Agrega esta línea
-      var opciones = document.getElementById("opciones").value; // Agrega esta línea
+      var telefonoTutor = document.getElementById("phone_tutor").value;
+      var opciones = document.getElementById("opciones").value;
+
 
       // Expresión regular para validar un número de teléfono de México
       var telefonoRegExp = /^(\+52|0052|52)?[1-9]\d{9}$/;
@@ -42,8 +43,17 @@
           alert("La fecha de nacimiento no puede ser mayor a 1970.");
           return;
       }
+      if (fechaNacimientoDate > fechaActual) {
+          alert("La fecha de nacimiento no puede ser en el futuro.");
+          return;
+      }
 
       // Validaciones
+      // Validación del nombre
+        if (!/^[a-zA-Z\s]+$/.test(nombre)) {
+            alert("El nombre no debe contener números ni caracteres especiales.");
+            return;
+        }
       if (nombre.trim() === "") {
           alert("Por favor, ingresa tu nombre.");
           window.location.href = "registro.php"; // URL de la página de registro
@@ -59,6 +69,11 @@
       if (!emailRegExp.test(email)) {
           alert("Por favor, ingresa una dirección de correo electrónico válida.");
           window.location.href = "registro.php";
+          return;
+      }
+
+      if (!/^\d+$/.test(telefono)) {
+          alert("El número de teléfono debe contener solo dígitos.");
           return;
       }
 
@@ -145,7 +160,7 @@ xhr.send(data);
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.html">
               
-              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" >
+              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 70px;">
                 <span>Centro Gerontológico</h2></span>
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
@@ -186,15 +201,14 @@ xhr.send(data);
     </div>
 
     <!-- contact section -->
+    <section class="hero-section2">
+    <div class="overlay2">
+    <h3 class="text-white display-3 mb-4" style="text-align: center;" >Regístrate</h3>
+</div>
+</section>
+  
 
-    <section class="contact_section layout_padding">
-      <div class="custom_heading-container">
-        <h3 class=" ">
-          REGISTRO
-        </h3>
-      </div>
-
-      <div class="container layout_padding2-top">
+      <div class="container layout_padding2-top contact_section layout_padding">
         <div class="row ">
           <div class="col-md-7">
             <div class="d-md-flex">
@@ -231,7 +245,7 @@ xhr.send(data);
                           <input type="text" placeholder="TELÉFONO TUTOR" name="telefono_tutor" id="phone_tutor" required>
                         </div>
                         <div class="col-md-6">
-                          <select name="opciones" id="">
+                          <select name="opciones" id="" >
                             <option value="" disabled selected>TALLER A ELEGIR</option>
                             <option value="Papel Nono">Papel Nono</option>
                             <option value="Danza">Danza</option>
@@ -239,7 +253,7 @@ xhr.send(data);
                           </select>
 
                         </div>
-                        <div class="col-md-12 d-flex justify-content-center">
+                        <div class="contact_section button col-md-12 d-flex justify-content-center">
                           <button value="Registrar" onclick="registrarUsuario()">
                             REGISTRAR
                           </button>
@@ -253,7 +267,7 @@ xhr.send(data);
       
 
       </div>
-    </section>
+  
 
   <!-- end contact section -->
   <!-- info section -->
@@ -316,7 +330,7 @@ xhr.send(data);
               <a href="">
                 <img src="images/location.png" alt="">
                 <span>
-                  Carretera Mexico- Laredo s/n, esq, con av. Insurgentes, instalaciones del antiguo patrimonio, Ixmiquilpan, Hgo., Ixmiquilpan, Mexico
+                  Carretera México- Laredo s/n, esq, con av. Insurgentes, instalaciones del antiguo patrimonio, Ixmiquilpan, Hgo., Ixmiquilpan, México
                 </span>
               </a>
             </div>

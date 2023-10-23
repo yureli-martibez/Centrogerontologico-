@@ -73,7 +73,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.html">
               
-              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" >
+              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 70px;" >
                 <span>Centro Gerontológico</h2></span>
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"

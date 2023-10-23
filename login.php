@@ -27,6 +27,9 @@
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
     
     <!--Icono de la pestaña-->
     <link rel="icon" type="img/ico" href="images/logo_ce.png">
@@ -40,7 +43,7 @@
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.html">
               
-              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" >
+              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 70px;">
                 <span>Centro Gerontológico</h2></span>
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
@@ -82,37 +85,45 @@
 
     <!-- contact section -->
     
-    <section class="contact_section layout_padding">
-      <div class="custom_heading-container">
-        <h3 class=" ">
-          INICIO DE SESIÓN
-        </h3>
-      </div>
+   
+    
+    <section class="hero-section2">
+    <div class="overlay2">
+    <h3 class="text-white display-3 mb-4" style="text-align: center;" > Iniciar sesión</h3>
+</div>
+</section>
 
-      <div class="container layout_padding2-top">
+
+      <div class="container layout_padding2-top contact_section layout_padding">
         <div class="row ">
           <div class="col-md-7">
             <div class="d-md-flex">
               <div class="col-md-10 p-0 container2">
                 <!-- Imagen a la izquierda del formulario -->
-                <img src="images/centro3.jpg" alt="Tu Imagen" class="img-fluid h-100" style="max-width: 97%;">
+                <img src="images/login.jpg" alt="Tu Imagen" class="img-fluid h-100" style="max-width: 97%;">
               </div>
               
-              <form action="validar.php" class=" container2 col-12 " method="post" > <!-- jjj -->
+              <form action="validar.php" class=" container2 col-11 " method="post" > <!-- jjj -->
+              <div class="user-icon">
+                <img src="images/user-icon.png" alt="Usuario">
+              </div>
                     <?php
                         if (isset ($errorLogin)){
                             echo $errorLogin;
                       }
                     ?>
-                    <div class="row">
-                    <div class="custom_heading-container">
-                          <h4 class=" " style="">
-                            Ingrese su número de teléfono
-                          </h4>
+                   
+                    <div class="container py-1">
+                  
+                          <h4 class="justified-text text-center" >
+                            Introduzca su número de teléfono
+                    </h4>
                         </div>
-                                    
-                        <div class="col-md-6 mx-auto">
-                          <input type="text" placeholder="TELÉFONO" name="telefono" id="phone" value="" required>
+                         
+                        
+                        <div class="col-md-9 mx-auto">
+                        
+                        <input type="text" placeholder="NÚMERO DE TELÉFONO" name="telefono" id="phone" value="" required>
                         </div>
                         
                         <div class="col-md-12 d-flex justify-content-center">
@@ -191,7 +202,7 @@
               <a href="">
                 <img src="images/location.png" alt="">
                 <span>
-                  Carretera Mexico- Laredo s/n, esq, con av. Insurgentes, instalaciones del antiguo patrimonio, Ixmiquilpan, Hgo., Ixmiquilpan, Mexico
+                  Carretera México- Laredo s/n, esq, con av. Insurgentes, instalaciones del antiguo patrimonio, Ixmiquilpan, Hgo., Ixmiquilpan, México
                 </span>
               </a>
             </div>

@@ -4,6 +4,18 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 
+
+define('INACTIVITY_TIMEOUT', 60); // 60 segundos = 1 minuto
+
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > INACTIVITY_TIMEOUT) {
+    session_unset();
+    session_destroy();
+} else {
+    $_SESSION['last_activity'] = time();
+}
+
+// Resto del código de la página
+
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['user'])) {
     // El usuario no ha iniciado sesión, redirigir a la página de inicio de sesión
@@ -30,10 +42,18 @@ try {
     // Obtén los datos del usuario
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-} catch (PDOException $e) {
+    // Consulta para obtener el nombre del taller desde la tabla pertaller
+    $stmt2 = $db->prepare("SELECT nombre_ta FROM pertaller WHERE id_paciente = :id_paciente");
+    $stmt2->bindParam(':id_paciente', $usuario['id_paciente']);
+    $stmt2->execute();
+    $nombre_talleres = $stmt2->fetchAll(PDO::FETCH_COLUMN);
+
+   // var_dump($nombre_talleres);
+
+    } catch (PDOException $e) {
     // Manejo de errores de la base de datos
     echo "Error de conexión: " . $e->getMessage();
-}
+    }
 
 // Cerrar la conexión a la base de datos
 $db = null;
@@ -137,9 +157,27 @@ $db = null;
     <p><strong>Fecha de Nacimiento:</strong> <?php echo $usuario['Fecha_nac']; ?></p>
     <p><strong>Tutor/Responsable:</strong> <?php echo $usuario['Pers_contact']; ?></p>
     <p><strong>Teléfono del Tutor:</strong> <?php echo $usuario['tel_contac']; ?></p>
-    <p><strong>Taller Elegido:</strong> <?php echo $usuario['nombre_ta']; ?></p>
-</div>
-</div>
+    <p><strong>Taller Elegido:</strong> <?php echo implode(', ', $nombre_talleres); ?></p>
+    <p><strong>Seleccione sus talleres</strong></p>
+    
+    
+    
+    <div class="custom_heading-container">
+        <h4 class=" ">
+          Cambiar taller 
+        </h4>
+      </div>
+
+    <form action="procesar_seleccion.php" method="POST">
+    <label for="talleres">Selecciona talleres:</label>
+    <input type="checkbox" name="talleres[]" value="papel_nono"> Papel Nono
+    <input type="checkbox" name="talleres[]" value="cocina"> Cocina
+    <input type="checkbox" name="talleres[]" value="danza"> Danza
+    <input type="submit" value="Guardar selección">
+</form>
+
+      
+
 </section>
     <!-- Agrega más elementos HTML según sea necesario -->
 
