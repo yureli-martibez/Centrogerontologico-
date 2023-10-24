@@ -263,7 +263,7 @@ xhr.send(data);
   
           </div>
         </div>
-      </div>
+      </div> 
       
 
       </div>
