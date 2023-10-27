@@ -150,6 +150,8 @@ $db = null;
         <img src="images/user-icon.png" alt="Usuario">
     </div>
     <h1><?php echo $usuario['Nombre'] . ' ' . $usuario['Apellidos']; ?></h1>
+    <input type="hidden" name="id_paciente" value="<?php echo $usuario['id_paciente']; ?>">
+
     
     <p><strong>Correo:</strong> <?php echo $usuario['Correo']; ?></p>
     <p><strong>Teléfono:</strong> <?php echo $usuario['Teléfono']; ?></p>
@@ -158,8 +160,8 @@ $db = null;
     <p><strong>Tutor/Responsable:</strong> <?php echo $usuario['Pers_contact']; ?></p>
     <p><strong>Teléfono del Tutor:</strong> <?php echo $usuario['tel_contac']; ?></p>
     <p><strong>Taller Elegido:</strong> <?php echo implode(', ', $nombre_talleres); ?></p>
-    <p><strong>Seleccione sus talleres</strong></p>
-    
+   
+   
     
     
     <div class="custom_heading-container">
@@ -167,13 +169,39 @@ $db = null;
           Cambiar taller 
         </h4>
       </div>
+    
+      
+        
+         
+       
+            
 
-    <form action="procesar_seleccion.php" method="POST">
-    <label for="talleres">Selecciona talleres:</label>
-    <input type="checkbox" name="talleres[]" value="papel_nono"> Papel Nono
-    <input type="checkbox" name="talleres[]" value="cocina"> Cocina
-    <input type="checkbox" name="talleres[]" value="danza"> Danza
-    <input type="submit" value="Guardar selección">
+                  <form action="procesar_seleccion.php"   method="POST">
+                  <input type="hidden" name="id_paciente" value="<?php echo $usuario['id_paciente']; ?>">
+                  <label for="talleres" class="custom-control custom-checkbox">Agregar taller:</label>
+                  
+                  <input type="checkbox" name="talleres[]" value="1" > Papel Nono
+                  <input type="checkbox" name="talleres[]" value="2" > Danza
+                  <input type="checkbox" name="talleres[]" value="3" > Cocina
+                  
+
+                  
+              <!-- Agrega checkboxes para deselección -->
+                  <label for="deseleccionar" class="custom-control custom-checkbox">Eliminar talleres:</label>
+                  <input type="checkbox" name="deseleccionar[]" value="1"> Papel Nono
+                  <input type="checkbox" name="deseleccionar[]" value="2"> Danza
+                  <input type="checkbox" name="deseleccionar[]" value="3"> Cocina
+
+                  <div class="contact_section ">
+                  <div class="col-md-12 d-flex justify-content-center">
+                    <button type="submit" value="Guardar selección"> Guardar selección
+                    </button>
+                  </div>
+             </div>
+            </div>
+          </div>
+        </div>
+  </div>
 </form>
 
       
@@ -181,7 +209,7 @@ $db = null;
 </section>
     <!-- Agrega más elementos HTML según sea necesario -->
 
-    <a href="editar_perfil.php">Editar Perfil</a> <!-- Enlaza a una página de edición si lo deseas -->
+    
 </body>
 </html>
 

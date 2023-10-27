@@ -1,5 +1,5 @@
 <?php
-//$mensaje = null;
+$mensaje = null;
 include_once('conex.php');
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
@@ -17,6 +17,16 @@ if (!$conexion) {
     die("Error de conexión: " . mysqli_connect_error());
 }
 
+// Consulta para verificar si ya existe un usuario con el mismo número de teléfono
+$sql = "SELECT * FROM paciente WHERE telefono = '$telefono'";
+$resultado = $conexion->query($sql);
+
+if ($resultado->num_rows > 0) {
+    // Ya existe un usuario con el mismo número de teléfono
+    $usuarioRegistrado = true;
+} else {
+
+    $usuarioRegistrado = false;
 // Define un mapeo de opciones a ID de talleres
 $mapeoTalleres = array(
     "Papel Nono" => 1,
@@ -60,7 +70,7 @@ if ($result->num_rows > 0) {
     $mensaje = "No se encontró el taller seleccionado en la base de datos.";
     $urlPerfil = "registro.php"; // Página de inicio de sesión o la que prefieras
 }
-
+}
 $conexion->close();
 
 $response = array('mensaje' => $mensaje, 'urlPerfil' => $urlPerfil);
