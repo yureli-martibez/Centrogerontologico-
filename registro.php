@@ -16,10 +16,11 @@
 
     <!-- ventana emergente -->  
     <script>
-       function validarFormulario() {
-        var event = window.event || event; // Obtén el evento
+       function validarFormulario(event) {
+      console.log("Validando formulario"); // Agrega esta línea
+      var event = window.event || event; // Obtén el evento
 
-event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
 var validacionesFallidas = false;
 
     var nombre = document.getElementById("names").value;
@@ -30,39 +31,35 @@ var validacionesFallidas = false;
     var tutor = document.getElementsByName("tutor")[0].value;
     var telefonoTutor = document.getElementById("phone_tutor").value;
 
-    // Restablece el mensaje de error en cada validación
-    var errorMessage = document.getElementById("error-message");
-    errorMessage.innerHTML = "";
-
     // Validación 1: Todos los campos son obligatorios
     if (!nombre || !apellidos || !email || !telefono || !fechaNacimiento || !tutor || !telefonoTutor) {
         alert("Por favor, complete todos los campos.");
-        return;
+        validacionesFallidas = true;
     }
 
     // Validación 2: Nombre y apellidos no contienen números
     if (/\d/.test(nombre) || /\d/.test(apellidos)) {
         alert("El nombre y apellidos no deben contener números.");
-        return;
+        validacionesFallidas = true;
     }
 
     // Validación 3: Asegurarse de que hay dos apellidos
     var apellidosSeparados = apellidos.split(" ");
     if (apellidosSeparados.length !== 2) {
         alert("Debe ingresar exactamente dos apellidos.");
-        return;
+        validacionesFallidas = true;
     }
 
     // Validación 4: Verificar que sea un correo electrónico válido
     if (!/^\S+@\S+\.\S+$/.test(email)) {
         alert("Ingrese una dirección de correo electrónico válida.");
-        return;
+        validacionesFallidas = true;
     }
 
      // Validación 7: Teléfono válido para la región de México en el estado de Hidalgo
      if (!/^[0-9]{10}$/.test(telefono) || !/^[0-9]{10}$/.test(telefonoTutor)) {
         alert("El número de teléfono debe contener 10 dígitos numéricos.");
-        return;
+        validacionesFallidas = true;
     }
     
 
@@ -70,32 +67,27 @@ var validacionesFallidas = false;
     var fechaLimite = new Date(1970, 0, 1); // 1 de enero de 1970
     if (fechaNacimiento > fechaLimite || fechaNacimiento >= new Date()) {
         alert("La fecha de nacimiento debe ser anterior a 1970 y no puede ser futura.");
-        return;
+        validacionesFallidas = true;
     }
 
     // Validación 6: Nombre completo del tutor
     if (tutor.split(" ").length < 2) {
         alert("El nombre completo del tutor es requerido.");
-        return;
+        validacionesFallidas = true;
     }
 
    
+    // Si hay errores de validación, detén el envío del formulario
     if (validacionesFallidas) {
-        errorMessage.innerHTML = "Ha ocurrido un error en la validación. Corrija los campos y vuelva a intentarlo.";
-        return false;
+        event.preventDefault(); // Evita el envío del formulario
+        return false; // Devuelve falso para indicar que hay errores
+      } else {
+        // Si todas las validaciones pasan, envía el formulario
+        document.getElementById("registroForm").submit();
     }
-   // Si todas las validaciones pasan, envía el formulario
-   return true;
 }
-      </script>
 
-<script>
-    <?php if ($usuarioRegistrado) : ?>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("mensajeRegistro").style.display = "block";
-        });
-    <?php endif; ?>
-</script>
+      </script>
 
 
     <!-- slider stylesheet -->
@@ -183,31 +175,39 @@ var validacionesFallidas = false;
               </div>
               
             
-                    <form action="registrar.php" class="container2 col-12" method="post" id="registroForm"> <!-- jjj -->
+                    <form action="registrar.php" class="container2 col-12" method="post" id="registroForm" onsubmit="return validarFormulario();"> <!-- jjj -->
                       <div class="row">
+                      <div class="error-message" id="error-message" style="color: red;"></div>
                           <div class="col-md-6">
                             <input type="text" placeholder="NOMBRE" name="nombre" id="names" value="" required>
+            
                           </div>
                           <div class="col-md-6">
                             <input type="text" placeholder="APELLIDOS" name="apellido" id="apellido" value="" required>
+                           
                           </div>
                           <div class="col-md-6">
                             <input type="email" placeholder="CORREO" name="email" id="email" value="" required>
+                          
                           </div>
                           <div class="col-md-6">
                             <input type="text" placeholder="TELÉFONO" name="telefono" id="phone" value="" required>
+                            
                           </div>
                           <div class="col-md-12">
                             <input type="text" class="message-box" placeholder="DOMICILIO" name="domicilio" id="domicilio" value="" required>
                           </div>
                           <div class="col-md-12">
                             Fecha de nacimiento<input type="date" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="FECHA DE NACIMIENTO"  required>
+                           
                           </div>
                           <div class="col-md-12">
                             <input type="text" class="message-box" name="tutor" placeholder="NOMBRE COMPLETO DEL TUTOR Y/O RESPONSABLE" id="tutor" required>
+                            
                           </div>
                           <div class="col-md-6">
                             <input type="text" placeholder="TELÉFONO TUTOR" name="telefono_tutor" id="phone_tutor" required>
+                           
                           </div>
                           <div class="col-md-6">
                             <select name="opciones" id="" >
@@ -216,13 +216,17 @@ var validacionesFallidas = false;
                               <option value="Danza">Danza</option>
                               <option value="Cocina">Cocina</option>
                             </select>
+                            
 
                           </div>
                           <div class="contact_section button col-md-12 d-flex justify-content-center">
-                            <button value="Registrar" type="submit" onclick="validarFormulario()">
+                            <button value="Registrar"  onclick="validarFormulario()">
                               REGISTRAR
                             </button>
+                            
                           </div>
+                          
+
                        
                   </div>
                 </form>
@@ -234,10 +238,7 @@ var validacionesFallidas = false;
       
 
       </div>
-      <div id="mensajeRegistro" style="display: none;">
-    <p>El usuario ya está registrado con este número de teléfono.</p>
-</div>
-<div class="error-message" id="error-message" style="color: red;"></div>
+
 
   <!-- end contact section -->
   <!-- info section -->
