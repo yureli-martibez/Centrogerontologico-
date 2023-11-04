@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -36,12 +37,13 @@
 </head>
 
 <body>
+  
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
           
               <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 70px;" >
                 <span>Centro Gerontológico</h2></span>
@@ -208,7 +210,7 @@
     <div class="container-fluid py-1">
       <div class="container py-1">
                       <h4 class="justified-text"><strong>Los centros gerontológicos consituyen un nivel asistencial de cuidados 
-                        de larga duración, deestinados de forma prioritaria a pacientes de edad 
+                        de larga duración, destinados de forma prioritaria a pacientes de edad 
                         avanzada, con dependencia física y/o psíquica, comorbilidad y problemática 
                         social.</h4></strong>
                   </div>
@@ -221,10 +223,6 @@
   
 </div>
 <div class="bg">
-    <!-- about section -->
-    
-
-    <!-- end about section -->
 
     <!-- service section -->
 <br>
@@ -237,7 +235,7 @@
         </div>
   
         <p class="">
-          Un hogar para el corazón de oro.
+          Un hogar para el corazón de oro
         </p>
         <div class="service_container ">
           <div class="row">
@@ -248,7 +246,7 @@
                 </div>
                 <div class="detail-box">
                   <h6>
-                    Seguras y acogedoras.
+                    Seguras y acogedoras
                   </h6>
                   <p>
                     Para la comodidad de nuestros residentes.
@@ -264,7 +262,7 @@
                 </div>
                 <div class="detail-box">
                   <h6>
-                    Espacios amplios y luminosos.
+                    Espacios amplios y luminosos
                   </h6>
                   <p>
                     Que promueven un ambiente logareño y confortable.
@@ -280,7 +278,7 @@
                 </div>
                 <div class="detail-box">
                   <h6>
-                    Zonas de convicencia.
+                    Zonas de convicencia
                   </h6>
                   <p>
                     Para crear una comunidad cálida y amigable.
@@ -296,7 +294,7 @@
                 </div>
                 <div class="detail-box">
                   <h6>
-                    Salas de estar y áreas comunes.
+                    Salas de estar y áreas comunes
                   </h6>
                   <p>
                     Que ayudan a fomentar la interacción social.

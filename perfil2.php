@@ -99,7 +99,7 @@ $db = null;
       <header class="header_section">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               
               <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" >
                 <span>Centro Gerontológico</h2></span>
@@ -115,7 +115,7 @@ $db = null;
               <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav  ">
                   <li class="nav-item ">
-                    <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="about.html"> ¿Quiénes somos? </a>
@@ -163,18 +163,12 @@ $db = null;
    
    
     
-    
+    <!-- formulario cambiar taller -->
     <div class="custom_heading-container">
         <h4 class=" ">
           Cambiar taller 
         </h4>
       </div>
-    
-      
-        
-         
-       
-            
 
                   <form action="procesar_seleccion.php"   method="POST">
                   <input type="hidden" name="id_paciente" value="<?php echo $usuario['id_paciente']; ?>">

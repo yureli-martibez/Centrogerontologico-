@@ -37,7 +37,7 @@
 
   <body>
     <div class="hero_area">
-      <!-- header section strats -->
+      <!-- header section starts -->
       <header class="header_section">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
@@ -69,7 +69,7 @@
                     <a class="nav-link" href="registro.php">Registro</a>
                   </li>
                   <li class="nav-item active">
-                    <a class="nav-link" href="login.php">Inicio de sesión</a>
+                    <a class="nav-link" href="personal.php">Inicio de sesión</a>
                   </li>
                 </ul>
               </div>
@@ -83,27 +83,20 @@
       <!-- end header section -->
     </div>
 
-    <!-- contact section -->
-    
-   
-    
-    <section class="hero-section2">
-    <div class="overlay2">
-    <h3 class="text-white display-3 mb-4" style="text-align: center;" > Iniciar sesión</h3>
-</div>
-</section>
 
+
+    <!-- formulario login -->
 
       <div class="container layout_padding2-top contact_section layout_padding">
         <div class="row ">
           <div class="col-md-7">
             <div class="d-md-flex">
-              <div class="col-md-10 p-0 container2">
+              <div class="col-md-9 p-0 container2">
                 <!-- Imagen a la izquierda del formulario -->
-                <img src="images/login.jpg" alt="Tu Imagen" class="img-fluid h-100" style="max-width: 97%;">
+                <img src="images/centro2.jpg" alt="Tu Imagen" class="img-fluid h-100" style="max-width: 100%;">
               </div>
               
-              <form action="validar.php" class=" container2 col-11 " method="post" > <!-- jjj -->
+              <form action="loginuser.php" class=" container2 col-12 " method="post" > <!-- jjj -->
               <div class="user-icon">
                 <img src="images/user-icon.png" alt="Usuario">
               </div>
@@ -116,14 +109,19 @@
                     <div class="container py-1">
                   
                           <h4 class="justified-text text-center" >
-                            Introduzca su número de teléfono
+                            Introduzca su usuario y contraseña
                     </h4>
                         </div>
                          
                         
                         <div class="col-md-9 mx-auto">
                         
-                        <input type="text" placeholder="NÚMERO DE TELÉFONO" name="telefono" id="phone" value="" required>
+                        <input type="text" placeholder="USUARIO" name="usuario" id="usuario" value="" required>
+                        </div>
+
+                        <div class="col-md-9 mx-auto">
+                        
+                        <input type="password" placeholder="CONTRASEÑA" name="contraseña" id="contraseña" value="" required>
                         </div>
                         
                         <div class="col-md-12 d-flex justify-content-center">
@@ -141,7 +139,7 @@
       </div>
     </section>
 
-  <!-- end contact section -->
+  <!-- end formulario login  -->
   <!-- info section -->
   <section class="info_section layout_padding">
     <div class="container">

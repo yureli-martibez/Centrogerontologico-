@@ -115,7 +115,7 @@ var validacionesFallidas = false;
       <header class="header_section">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               
               <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 70px;">
                 <span>Centro Gerontológico</h2></span>
@@ -131,7 +131,7 @@ var validacionesFallidas = false;
               <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav  ">
                   <li class="nav-item ">
-                    <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="about.html"> ¿Quiénes somos? </a>
@@ -262,7 +262,7 @@ var validacionesFallidas = false;
             </h4>
             <ul>
               <li>
-                <a href="index.html">
+                <a href="index.php">
                   Inicio
                 </a>
               </li>

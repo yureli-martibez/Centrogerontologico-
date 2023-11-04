@@ -1,7 +1,23 @@
-<!DOCTYPE html>
-  <html>
+<?php
+//seguriadad de la sesión 
+session_start();
+error_reporting(0);
+$varsesion=$_SESSION['usuario'];
 
-  <head>
+if($varsesion==null || $varsesion=''){
+  //echo("no tienes acceso");
+  header("location:personal.php");
+  die();
+}
+
+?>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<head>
     <!-- Basic -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,8 +29,8 @@
     <meta name="author" content="" />
 
     <title>Centro gerontológico</title>
-    <!-- slider stylesheet -->
-    <link rel="stylesheet" type="text/css"
+ <!-- slider stylesheet -->
+ <link rel="stylesheet" type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
 
     <!-- bootstrap core css -->
@@ -26,9 +42,6 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 
     
     <!--Icono de la pestaña-->
@@ -43,7 +56,7 @@
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.php">
               
-              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 70px;">
+              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" >
                 <span>Centro Gerontológico</h2></span>
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
@@ -65,12 +78,10 @@
                   <li class="nav-item">
                     <a class="nav-link" href="service.html"> Servicios y talleres </a>
                   </li>
-                  <li class="nav-item ">
-                    <a class="nav-link" href="registro.php">Registro</a>
-                  </li>
                   <li class="nav-item active">
-                    <a class="nav-link" href="login.php">Inicio de sesión</a>
+                    <a class="nav-link" href="includes/logout2.php">Cerrar sesión</a>
                   </li>
+                
                 </ul>
               </div>
             </div>
@@ -83,66 +94,9 @@
       <!-- end header section -->
     </div>
 
-    <!-- contact section -->
     
-   
     
-    <section class="hero-section2">
-    <div class="overlay2">
-    <h3 class="text-white display-3 mb-4" style="text-align: center;" > Iniciar sesión</h3>
-</div>
-</section>
-
-
-      <div class="container layout_padding2-top contact_section layout_padding">
-        <div class="row ">
-          <div class="col-md-7">
-            <div class="d-md-flex">
-              <div class="col-md-10 p-0 container2">
-                <!-- Imagen a la izquierda del formulario -->
-                <img src="images/login.jpg" alt="Tu Imagen" class="img-fluid h-100" style="max-width: 97%;">
-              </div>
-              
-              <form action="validar.php" class=" container2 col-11 " method="post" > <!-- jjj -->
-              <div class="user-icon">
-                <img src="images/user-icon.png" alt="Usuario">
-              </div>
-                    <?php
-                        if (isset ($errorLogin)){
-                            echo $errorLogin;
-                      }
-                    ?>
-                   
-                    <div class="container py-1">
-                  
-                          <h4 class="justified-text text-center" >
-                            Introduzca su número de teléfono
-                    </h4>
-                        </div>
-                         
-                        
-                        <div class="col-md-9 mx-auto">
-                        
-                        <input type="text" placeholder="NÚMERO DE TELÉFONO" name="telefono" id="phone" value="" required>
-                        </div>
-                        
-                        <div class="col-md-12 d-flex justify-content-center">
-                          <button type="submit" name="iniciar" value="Iniciar sesion" id="submit_btn" data-loading-text="Iniciando...." >
-                            INICIAR SESIÓN
-                          </button>
-                        </div>
-                </div>
-              </form>
-          </div>
-        </div>
-      </div>
-      
-
-      </div>
-    </section>
-
-  <!-- end contact section -->
-  <!-- info section -->
+     <!-- info section -->
   <section class="info_section layout_padding">
     <div class="container">
       <div class="row">
@@ -163,7 +117,7 @@
             </h4>
             <ul>
               <li>
-                <a href="index.php">
+                <a href="index.html">
                   Inicio
                 </a>
               </li>
@@ -178,12 +132,12 @@
                 </a>
               </li>
               <li>
-                <a href="contact.php">
+                <a href="contact.html">
                   Registro
                 </a>
               </li>
               <li>
-                <a href="login.php">
+                <a href="#">
                   Inicio de sesión 
                 </a>
               </li>
@@ -250,8 +204,6 @@
   </section>
   <!-- footer section -->
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
-
-</html>
