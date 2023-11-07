@@ -43,7 +43,7 @@
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.php">
               
-              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 70px;">
+              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 60px;">
                 <span>Centro Gerontológico</h2></span>
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
@@ -100,10 +100,10 @@
             <div class="d-md-flex">
               <div class="col-md-10 p-0 container2">
                 <!-- Imagen a la izquierda del formulario -->
-                <img src="images/login.jpg" alt="Tu Imagen" class="img-fluid h-100" style="max-width: 97%;">
+                <img src="images/login.jpg" alt="Tu Imagen" class="img-fluid h-100" style="max-width: 100%;">
               </div>
               
-              <form action="validar.php" class=" container2 col-11 " method="post" > <!-- jjj -->
+              <form action="validar.php" class=" container2 col-12 " method="post" > <!-- jjj -->
               <div class="user-icon">
                 <img src="images/user-icon.png" alt="Usuario">
               </div>
@@ -178,7 +178,7 @@
                 </a>
               </li>
               <li>
-                <a href="contact.php">
+                <a href="registro.php">
                   Registro
                 </a>
               </li>

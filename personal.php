@@ -43,7 +43,7 @@
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.php">
               
-              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 70px;">
+              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 60px;">
                 <span>Centro Gerontológico</h2></span>
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
@@ -65,9 +65,7 @@
                   <li class="nav-item">
                     <a class="nav-link" href="service.html"> Servicios y talleres </a>
                   </li>
-                  <li class="nav-item ">
-                    <a class="nav-link" href="registro.php">Registro</a>
-                  </li>
+                
                   <li class="nav-item active">
                     <a class="nav-link" href="personal.php">Inicio de sesión</a>
                   </li>
@@ -176,7 +174,7 @@
                 </a>
               </li>
               <li>
-                <a href="contact.php">
+                <a href="registro.php">
                   Registro
                 </a>
               </li>

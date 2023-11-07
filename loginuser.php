@@ -20,14 +20,14 @@ if($filas['id_cargo']==1){ //panel del administrador
 
 }else {
     if($filas['id_cargo']==2){//medico
-        header("location:salud.php");
+        header("location:medico.php");
         
     }
     if($filas['id_cargo']==3){//psicologo
-        header("location:salud.php");
+        header("location:psicologo.php");
     }
     if($filas['id_cargo']==4){//fisioterapeuta
-        header("location:salud.php");
+        header("location:fisioterapeuta.php");
     }
   
     ?>

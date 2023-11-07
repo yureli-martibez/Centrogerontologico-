@@ -56,7 +56,7 @@ if($varsesion==null || $varsesion=''){
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.php">
               
-              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" >
+              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 60px;" >
                 <span>Centro Gerontológico</h2></span>
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
@@ -72,13 +72,10 @@ if($varsesion==null || $varsesion=''){
                   <li class="nav-item ">
                     <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="about.html"> ¿Quiénes somos? </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="service.html"> Servicios y talleres </a>
-                  </li>
                   <li class="nav-item active">
+                    <a class="nav-link" href="admin.php">Administrador</a>
+                  </li>
+                  <li class="nav-item ">
                     <a class="nav-link" href="includes/logout2.php">Cerrar sesión</a>
                   </li>
                 
@@ -94,7 +91,77 @@ if($varsesion==null || $varsesion=''){
       <!-- end header section -->
     </div>
 
+     <!-- Bienvenida admin -->
+    <section class="about_section layout_padding">
+  <div class="container">
+    <div class="custom_heading-container">
+      <h3 class=" ">
+        Bienvenido administrador
+      </h3>
+    </div>
+  </div>
+</section>
+ <!-- end bienvenida -->
+ 
+ <!-- Talleres section -->
+
+ <section class="work_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h3 class=" ">
+         REPORTES
+        </h3>
+      </div>
+    </div>
     
+    <div class="work_container ">
+      
+      <div class="box b-1">
+        <a href="pacientes.php">
+        <div class="img-box">
+          <img src="images/paciente.jpg" alt="">
+        </div>
+        <div class="name">
+          <h6>
+           Pacientes
+          </h6>
+
+        </div>
+      </div>
+    </a>
+      <div class="box b-2">
+        <a href="talleres.php">
+        <div class="img-box ">
+          <img src="images/talleres.png" alt="">
+        </div>
+        <div class="name">
+          <h6>
+            Talleres
+          </h6>
+        </div>
+      </div>
+    </a>
+      <div class="box b-3">
+        <a href="citas.php">
+        <div class="img-box ">
+          <img src="images/citas.png" alt="">
+        </div>
+        <div class="name">
+          <h6>
+            Citas
+          </h6>
+        </div>
+          <hr>
+        </div>
+      </div>
+    </a>
+
+    
+  </section>
+
+
+  <!-- end work section -->
+
     
      <!-- info section -->
   <section class="info_section layout_padding">
@@ -117,7 +184,7 @@ if($varsesion==null || $varsesion=''){
             </h4>
             <ul>
               <li>
-                <a href="index.html">
+                <a href="index.php">
                   Inicio
                 </a>
               </li>
@@ -132,12 +199,12 @@ if($varsesion==null || $varsesion=''){
                 </a>
               </li>
               <li>
-                <a href="contact.html">
+                <a href="registro.php">
                   Registro
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="login.php">
                   Inicio de sesión 
                 </a>
               </li>

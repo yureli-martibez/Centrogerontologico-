@@ -45,7 +45,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.php">
           
-              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 70px;" >
+              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 60px;" >
                 <span>Centro Gerontológico</h2></span>
             
           </a>
@@ -265,7 +265,7 @@
                     Espacios amplios y luminosos
                   </h6>
                   <p>
-                    Que promueven un ambiente logareño y confortable.
+                    Que promueven un ambiente hogareño y confortable.
                   </p>
                  
                 </div>
@@ -349,12 +349,12 @@
                 </a>
               </li>
               <li>
-                <a href="contact.html">
+                <a href="registro.php">
                   Registro
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="login.php">
                   Inicio de sesión 
                 </a>
               </li>

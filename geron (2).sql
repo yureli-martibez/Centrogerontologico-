@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-10-2023 a las 09:28:03
+-- Tiempo de generación: 05-11-2023 a las 11:04:08
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -33,6 +33,13 @@ CREATE TABLE `admin` (
   `contraseña` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `usuario`, `contraseña`) VALUES
+(1, 'admin', 'cinco4321');
+
 -- --------------------------------------------------------
 
 --
@@ -43,6 +50,16 @@ CREATE TABLE `cargo` (
   `id` int(30) NOT NULL,
   `descripcion` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `cargo`
+--
+
+INSERT INTO `cargo` (`id`, `descripcion`) VALUES
+(1, 'Administrador'),
+(2, 'Medico'),
+(3, 'Psicologo'),
+(4, 'fisioterapeuta');
 
 -- --------------------------------------------------------
 
@@ -74,19 +91,21 @@ CREATE TABLE `paciente` (
   `Domicilio` varchar(100) NOT NULL,
   `Fecha_nac` date NOT NULL,
   `Pers_contact` varchar(100) NOT NULL,
-  `tel_contac` varchar(15) NOT NULL,
-  `nombre_ta` varchar(30) NOT NULL
+  `tel_contac` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `paciente`
 --
 
-INSERT INTO `paciente` (`id_paciente`, `Nombre`, `Apellidos`, `Correo`, `Teléfono`, `Domicilio`, `Fecha_nac`, `Pers_contact`, `tel_contac`, `nombre_ta`) VALUES
-(66, 'Rocio', 'Cruz', 'cruzpenarocio0105@gmail.com', '7714200613', 'el calvario ', '1956-12-20', 'Alicia Peña Martinez', '7721267345', 'Papel Nono'),
-(68, 'Martin', 'Corona', 'perez@gmail.com', '7721345623', 'san antonio', '1964-12-16', 'Perezoso Perez Pereza', '7714327834', 'Cocina'),
-(69, 'Rocio', 'Cruz', 'cruzpenarocio0105@gmail.com', '7752148497', 'el calvario ', '1968-07-05', 'Alicia Peña Martinez', '7721267345', 'Array'),
-(70, 'Luis Javier', 'Rangel Sierra', 'luisjavier@gmail.com', '7721294932', 'Fracionamiento Los nogales 24', '1968-07-19', 'María Pérez Pardo', '7721227824', 'Papel Nono');
+INSERT INTO `paciente` (`id_paciente`, `Nombre`, `Apellidos`, `Correo`, `Teléfono`, `Domicilio`, `Fecha_nac`, `Pers_contact`, `tel_contac`) VALUES
+(69, 'Rocio', 'Cruz', 'cruzpenarocio0105@gmail.com', '7752148497', 'el calvario ', '1968-07-05', 'Alicia Peña Martinez', '7721267345'),
+(74, 'Lucia', 'Sánchez Hernández', 'Lucia@gmail.com', '7712345678', 'Panales', '1950-08-10', 'Andrea Hernández Cruz', '7724567890'),
+(76, 'Maria', 'Ortiz López ', 'maria@gmail.com', '7721567890', 'San Nicolás ', '1965-08-11', 'Liliana Martínez Cruz', '7721599045'),
+(81, 'Catalina ', 'Mata Corona', 'catalina@gmail.com', '7725678056', 'Cerritos', '1916-07-07', 'Eric Herreros Ramos', '7714326789'),
+(82, 'Bernardino ', 'Camacho Castellano', 'Berna@gmail.com', '7724567843', 'San antonio', '1961-12-07', 'Emiliano Peiro Ortiz ', '7712314980'),
+(106, 'Arturo', 'Cruz Peña', 'atun@gmail.com', '7721294932', 'el calvario ', '1962-07-12', 'Alicia Peña Martinez', '7721139780'),
+(107, 'Luis', 'Olvera Grande', 'olvera@gmail.com', '7721366745', 'Panales', '1961-07-05', 'Rocio Cruz Peña', '7721294932');
 
 -- --------------------------------------------------------
 
@@ -99,6 +118,41 @@ CREATE TABLE `personal_salud` (
   `Nombre_Sa` varchar(100) NOT NULL,
   `id_ser` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `personal_salud`
+--
+
+INSERT INTO `personal_salud` (`id_per`, `Nombre_Sa`, `id_ser`) VALUES
+(1, 'Psicólogo ', 6),
+(2, 'Medico', 4),
+(3, 'Fisioterapeuta', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pertaller`
+--
+
+CREATE TABLE `pertaller` (
+  `tallerPa` int(30) NOT NULL,
+  `nombre_ta` varchar(1000) DEFAULT NULL,
+  `id_taller` int(11) NOT NULL,
+  `id_paciente` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `pertaller`
+--
+
+INSERT INTO `pertaller` (`tallerPa`, `nombre_ta`, `id_taller`, `id_paciente`) VALUES
+(4, 'Cocina', 3, 74),
+(49, 'Papel nono', 1, 82),
+(59, 'Danza', 2, 69),
+(60, 'Cocina', 3, 69),
+(75, 'Danza', 2, 107),
+(77, 'Papel nono', 1, 106),
+(79, 'Cocina', 3, 106);
 
 -- --------------------------------------------------------
 
@@ -113,6 +167,16 @@ CREATE TABLE `reportes` (
   `hora` time DEFAULT NULL,
   `id_admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `reportes`
+--
+
+INSERT INTO `reportes` (`id_reporte`, `nombre_re`, `fecha`, `hora`, `id_admin`) VALUES
+(1, 'pacientes', '2023-11-05', '05:22:49', 1),
+(5, 'pacientes', '2023-11-04', '22:30:46', 1),
+(6, 'talleres', '2023-11-04', '23:24:53', 1),
+(7, 'talleres', '2023-11-04', '23:25:53', 1);
 
 -- --------------------------------------------------------
 
@@ -184,6 +248,15 @@ CREATE TABLE `taller` (
   `id_paciente` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `taller`
+--
+
+INSERT INTO `taller` (`id_taller`, `nombre_ta`, `dias_taller`, `id_paciente`) VALUES
+(1, 'Papel nono', 'Lunes y Miércoles ', NULL),
+(2, 'Danza', 'Martes y Viernes', NULL),
+(3, 'Cocina', 'Jueves', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -197,6 +270,16 @@ CREATE TABLE `usuarios` (
   `contraseña` varchar(100) DEFAULT NULL,
   `id_cargo` int(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `contraseña`, `id_cargo`) VALUES
+(5, 'Administrador', 'admin', 'cinco4321', 1),
+(6, 'Medico', 'medico', '5cuatro321', 2),
+(7, 'Psicologo', 'psicologia', '5cuatro321', 3),
+(8, 'fisioterapeuta', 'fisioterapia', '5cuatro321', 4);
 
 --
 -- Índices para tablas volcadas
@@ -235,11 +318,20 @@ ALTER TABLE `personal_salud`
   ADD UNIQUE KEY `id_ser` (`id_ser`);
 
 --
+-- Indices de la tabla `pertaller`
+--
+ALTER TABLE `pertaller`
+  ADD PRIMARY KEY (`tallerPa`),
+  ADD KEY `nombre_ta` (`nombre_ta`(768)),
+  ADD KEY `id_paciente` (`id_paciente`) USING BTREE,
+  ADD KEY `id_taller_2` (`id_taller`) USING BTREE;
+
+--
 -- Indices de la tabla `reportes`
 --
 ALTER TABLE `reportes`
   ADD PRIMARY KEY (`id_reporte`),
-  ADD UNIQUE KEY `id_admin` (`id_admin`);
+  ADD KEY `id_admin` (`id_admin`) USING BTREE;
 
 --
 -- Indices de la tabla `rep_citas`
@@ -277,6 +369,7 @@ ALTER TABLE `servicio`
 --
 ALTER TABLE `taller`
   ADD PRIMARY KEY (`id_taller`),
+  ADD UNIQUE KEY `nombre_ta` (`nombre_ta`),
   ADD UNIQUE KEY `id_paciente` (`id_paciente`);
 
 --
@@ -294,13 +387,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `cargo`
 --
 ALTER TABLE `cargo`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `citas`
@@ -312,19 +405,25 @@ ALTER TABLE `citas`
 -- AUTO_INCREMENT de la tabla `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT de la tabla `personal_salud`
 --
 ALTER TABLE `personal_salud`
-  MODIFY `id_per` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_per` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `pertaller`
+--
+ALTER TABLE `pertaller`
+  MODIFY `tallerPa` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT de la tabla `reportes`
 --
 ALTER TABLE `reportes`
-  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `rep_citas`
@@ -354,13 +453,13 @@ ALTER TABLE `servicio`
 -- AUTO_INCREMENT de la tabla `taller`
 --
 ALTER TABLE `taller`
-  MODIFY `id_taller` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_taller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
@@ -377,6 +476,14 @@ ALTER TABLE `citas`
 --
 ALTER TABLE `personal_salud`
   ADD CONSTRAINT `personal_salud_ibfk_1` FOREIGN KEY (`id_ser`) REFERENCES `servicio` (`id_ser`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `pertaller`
+--
+ALTER TABLE `pertaller`
+  ADD CONSTRAINT `pertaller_ibfk_1` FOREIGN KEY (`id_taller`) REFERENCES `taller` (`id_taller`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pertaller_ibfk_2` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id_paciente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pertaller_ibfk_3` FOREIGN KEY (`nombre_ta`) REFERENCES `taller` (`nombre_ta`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `reportes`
@@ -417,6 +524,12 @@ ALTER TABLE `servicio`
 --
 ALTER TABLE `taller`
   ADD CONSTRAINT `taller_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id_paciente`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_cargo`) REFERENCES `cargo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

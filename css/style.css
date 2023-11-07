@@ -757,7 +757,7 @@ a:focus {
 }
 
 .container2 {
-  background-color: rgba(34, 34, 34, 0.334);
+  background-color: rgba(34, 34, 34, 0.423);
   border-radius: 1px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.386);
   padding: 20px;
@@ -1083,5 +1083,38 @@ a:focus {
 .testimonial-carousel .owl-dot.active {
   width: 50px;
   background: #F9A392;
+}
+
+.container3 {
+  background-color: rgb(237, 237, 237);
+  border-radius: 1px;
+  padding: 40px;
+}
+
+.pagina-con-fondo {
+  background-image: url('..images/citasmedico.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la URL de tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-section3 {
+  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(../images/citasmedico.jpg), no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  min-height: 290px; /* Altura mínima de la sección */
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  text-align: center; /* Alinea el contenido al centro en dispositivos pequeños */
+  padding: 20px; /* Añade espacio interior en dispositivos pequeños */
+}
+
+.overlay3 {
+ /* Fondo semitransparente para el texto */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%; /* Limita el ancho del texto */
+  margin: auto; /* Centra horizontalmente el texto */
 }
 

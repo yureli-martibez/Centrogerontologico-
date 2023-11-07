@@ -117,7 +117,7 @@ var validacionesFallidas = false;
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.php">
               
-              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 70px;">
+              <h2 class="m-0 text-primary"><img src="images/logo_ce.png" class="logo" alt="Main Logo" align="absmiddle" style="width: 60px;">
                 <span>Centro Gerontológico</h2></span>
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
@@ -140,7 +140,7 @@ var validacionesFallidas = false;
                     <a class="nav-link" href="service.html"> Servicios y talleres </a>
                   </li>
                   <li class="nav-item active">
-                    <a class="nav-link" href="contact.html">Registro</a>
+                    <a class="nav-link" href="registro.php">Registro</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="login.php">Inicio de sesión</a>
@@ -160,7 +160,7 @@ var validacionesFallidas = false;
     <!-- contact section -->
     <section class="hero-section2">
     <div class="overlay2">
-    <h3 class="text-white display-3 mb-4" style="text-align: center;" >Regístrate</h3>
+    <h3 class="text-white display-4 mb-3" style="text-align: center;" >Regístrate</h3>
 </div>
 </section>
   
@@ -175,42 +175,43 @@ var validacionesFallidas = false;
               </div>
               
             
-                    <form action="registrar.php" class="container2 col-12" method="post" id="registroForm" onsubmit="return validarFormulario();"> <!-- jjj -->
+                    <form action="registrar.php" class="container2 col-12" method="post"> 
+                    
                       <div class="row">
                       <div class="error-message" id="error-message" style="color: red;"></div>
                           <div class="col-md-6">
-                            <input type="text" placeholder="NOMBRE" name="nombre" id="names" value="" required>
+                          Nombre:<input type="text" placeholder="NOMBRE" name="nombre" id="names" value="" required>
             
                           </div>
                           <div class="col-md-6">
-                            <input type="text" placeholder="APELLIDOS" name="apellido" id="apellido" value="" required>
+                          Apellidos:<input type="text" placeholder="APELLIDOS" name="apellido" id="apellido" value="" required>
                            
                           </div>
                           <div class="col-md-6">
-                            <input type="email" placeholder="CORREO" name="email" id="email" value="" required>
+                          Correo:<input type="email" placeholder="CORREO" name="email" id="email" value="" required>
                           
                           </div>
                           <div class="col-md-6">
-                            <input type="text" placeholder="TELÉFONO" name="telefono" id="phone" value="" required>
+                          Teléfono:<input type="text" placeholder="TELÉFONO" name="telefono" id="phone" value="" required>
                             
                           </div>
                           <div class="col-md-12">
-                            <input type="text" class="message-box" placeholder="DOMICILIO" name="domicilio" id="domicilio" value="" required>
+                          Domicilio:<input type="text" class="message-box" placeholder="DOMICILIO" name="domicilio" id="domicilio" value="" required>
                           </div>
                           <div class="col-md-12">
                             Fecha de nacimiento<input type="date" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="FECHA DE NACIMIENTO"  required>
                            
                           </div>
                           <div class="col-md-12">
-                            <input type="text" class="message-box" name="tutor" placeholder="NOMBRE COMPLETO DEL TUTOR Y/O RESPONSABLE" id="tutor" required>
+                          Tutor:<input type="text" class="message-box" name="tutor" placeholder="NOMBRE COMPLETO DEL TUTOR Y/O RESPONSABLE" id="tutor" required>
                             
                           </div>
                           <div class="col-md-6">
-                            <input type="text" placeholder="TELÉFONO TUTOR" name="telefono_tutor" id="phone_tutor" required>
+                          Teléfono tutor:<input type="text" placeholder="TELÉFONO TUTOR" name="telefono_tutor" id="phone_tutor" required>
                            
                           </div>
                           <div class="col-md-6">
-                            <select name="opciones" id="" >
+                          Taller:<select name="opciones" id="" >
                               <option value="" disabled selected>TALLER A ELEGIR</option>
                               <option value="Papel Nono">Papel Nono</option>
                               <option value="Danza">Danza</option>
@@ -277,12 +278,12 @@ var validacionesFallidas = false;
                 </a>
               </li>
               <li>
-                <a href="contact.php">
+                <a href="registro.php">
                   Registro
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="login.php">
                   Inicio de sesión 
                 </a>
               </li>
